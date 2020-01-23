@@ -19,8 +19,8 @@ export const runRules = (
   // Ruleset
   // - should accept both absolute and relative files paths (from the ruleset path)
   // - should not accept an empty array of rules
-  // - Question: How to propagate to the caller an error in the ruleset format?
-  // - Question: How to cope with STDIN as a source?
+  // - To be investigated: How to propagate to the caller an error in the ruleset format?
+  // - To be investigated: How to cope with STDIN as a source?
   // LoadRuleSet
   // - should honor except
   // - should honor excepts in sub-referenced rulesets
@@ -31,7 +31,7 @@ export const runRules = (
   // - (optional) before the start of analysis, should display something like "x loaded exceptions (spanning y files)"
   // - (optional) should diplay a warning related to orphaned exceptions (exceptions that haven't been been triggered by the last run) in order to clean up obsolete exceptions
   // - (optional) report issues that have been silenced
-  // Various
+  // To be investigated
   // - How can we deal with excepts in a different file than the ruleset? Rulesets and exceptions may have different lifecycle. People designing rulesets may not be part of the team using the rulesets (and facing findings that would require exceptions)
   //   - Idea: Allow rulesets to only define excepts and leverage the ruleset sub-referencing mechanism
   // - Should we compare paths or ranges to identify a hit? (paths looks more straightforward. However if possible to express multiple paths resulting in the same range, range may be safer)
