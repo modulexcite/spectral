@@ -71,7 +71,7 @@
                 "type": "array",
                 "items": {
                     "type": "string",
-                    "minLength": 2
+                    "minLength": 1
                 },
                 "minItems": 1
             },

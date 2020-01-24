@@ -282,7 +282,6 @@ describe('Function Validation', () => {
       { extends: 'foo', except: { one: [] } },
       { extends: 'foo', except: { one: [1] } },
       { extends: 'foo', except: { one: [''] } },
-      { extends: 'foo', except: { one: ['r'] } },
     ];
 
     it.each(rulesetsWithInvalidExcepts)('throws when defined "except" do not match schema', async r => {
