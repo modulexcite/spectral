@@ -273,4 +273,10 @@ describe('Function Validation', () => {
 
     expect(fn).toHaveBeenCalledWith({}, '2', { given: [] }, { original: [], given: [] });
   });
+
+  describe('Exceptions validation', () => {
+    it('throws when defined "except" do not match schema', () => {
+      expect(true).toEqual(false);
+    });
+  });
 });
