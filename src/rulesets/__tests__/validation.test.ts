@@ -275,8 +275,20 @@ describe('Function Validation', () => {
   });
 
   describe('Exceptions validation', () => {
-    it('throws when defined "except" do not match schema', () => {
-      expect(true).toEqual(false);
+    const rulesetsWithInvalidExcepts = [
+      { extends: 'foo', except: '' },
+      { extends: 'foo', except: {} },
+      { extends: 'foo', except: { one: null } },
+      { extends: 'foo', except: { one: [] } },
+      { extends: 'foo', except: { one: [1] } },
+      { extends: 'foo', except: { one: [''] } },
+      { extends: 'foo', except: { one: ['r'] } },
+    ];
+
+    it.each(rulesetsWithInvalidExcepts)('throws when defined "except" do not match schema', async r => {
+      expect(() => {
+        assertValidRuleset(r);
+      }).toThrow(ValidationError);
     });
   });
 });
